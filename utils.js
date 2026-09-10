@@ -5,9 +5,9 @@
 export function tokenize(text) {
   return text
     .toLowerCase()
-    .replace(/[^a-z\s]/g, " ")   // anything that is not a-z or whitespace -> space
-    .split(/\s+/)                // split on runs of whitespace
-    .filter((w) => w !== "");    // drop empty strings
+    .replace(/[^a-z\s]/g, " ") // anything that is not a-z or whitespace -> space
+    .split(/\s+/) // split on runs of whitespace
+    .filter((w) => w !== ""); // drop empty strings
 }
 
 // countWords(["ship", "it", "ship"]) -> { ship: 2, it: 1 }
@@ -15,10 +15,18 @@ export function tokenize(text) {
 // a word you have not seen yet has no key (=== undefined), so set it to 0 first.
 export function countWords(words) {
   // TODO
+  const counts = {};
+  words.forEach((word) => {
+    counts[word] = (counts[word] ?? 0) + 1;
+  });
+  return counts;
 }
 
 // topN({ ship: 2, it: 1, code: 9 }, 2) -> [["code", 9], ["ship", 2]]
 // Object.entries(counts) gives [["ship", 2], ["it", 1], ["code", 9]]. Sort it, then cut it.
 export function topN(counts, n) {
   // TODO
+  return Object.entries(counts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, n);
 }

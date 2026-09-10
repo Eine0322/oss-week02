@@ -9,11 +9,33 @@
 // You will need: filter, map, sort, slice, and Math.ceil.
 // Not sure what one of them does? Look it up (MDN) before asking.
 
-const scores = Array.from({ length: 20 }, () => Math.floor(Math.random() * 101));
+const scores = Array.from({ length: 20 }, () =>
+  Math.floor(Math.random() * 101),
+);
+
 console.log("start:", scores);
 
 // (a)
+const oddScores = scores.filter((score) => score % 2 !== 0);
+console.log("odd:", oddScores);
+
+const doubledScores = oddScores.map((score) => score * 2);
+console.log("doubled:", doubledScores);
+
+const sortedScores = doubledScores.sort((a, b) => b - a);
+console.log("sorted:", sortedScores);
+
+const firstHalf = sortedScores.slice(0, Math.ceil(sortedScores.length / 2));
+console.log("first half:", firstHalf);
 
 // (b)
+const result = scores
+  .filter((score) => score % 2 !== 0)
+  .map((score) => score * 2)
+  .sort((a, b) => b - a)
+  .slice(0, Math.ceil(scores.filter((score) => score % 2 !== 0).length / 2));
+
+console.log("result:", result);
 
 // (c)
+console.log("scores again:", scores);

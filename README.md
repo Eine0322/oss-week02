@@ -1,13 +1,13 @@
 # oss-week02 — Node, JavaScript, npm
 
-Week 2 hands-on for *Open Source Software Design and Lab* (Kwangwoon Univ., 2026).
+Week 2 hands-on for _Open Source Software Design and Lab_ (Kwangwoon Univ., 2026).
 
-Replace this first line with your name and student ID, commit, push. That is P0.
+Park Hyunji
 
 ## Rules
 
 - Ask AI anything: concepts, error messages, docs. **Do not paste generated code.** Type every line yourself.
-- Inline completions off: `Ctrl+Shift+P` → *GitHub Copilot: Toggle (Enable/Disable) Inline Suggestions*.
+- Inline completions off: `Ctrl+Shift+P` → _GitHub Copilot: Toggle (Enable/Disable) Inline Suggestions_.
 - One problem, one file, one commit. Use the commit message given for each problem.
 - Commit and push from VS Code: `Ctrl+Shift+G` → stage (`+`) → message → **Commit** → **Sync Changes**. Terminal Git starts in week 4.
 - Stuck for 15 minutes? Raise a hand.
@@ -16,7 +16,7 @@ Replace this first line with your name and student ID, commit, push. That is P0.
 ## P0. Project setup (8 min) — `chore: init project`
 
 1. This repo is a template. Click **Use this template → Create a new repository**. Name it `oss-week02`, **Public**.
-2. On your new repo: **Code → HTTPS → copy**. In VS Code: `Ctrl+Shift+P` → **Git: Clone** → paste → pick a folder → Open.
+2. On your new repo: **Code → HTTPS → copy**. In VS Code: `Ctrl+Shift+P` → **Git: Clone** → paste → pick a fotjlder → Open.
 3. Open `package.json`. `"type": "module"` is already there. Change nothing yet.
 4. Edit the first line of this README with your name and student ID. Save.
 5. `Ctrl+Shift+G` → stage → `chore: init project` → **Commit** → **Sync Changes**.
@@ -113,16 +113,16 @@ Done early? Explain your P3 (c) and P6 answers to the person next to you.
 
 ## Common errors
 
-| You see | Cause | Fix |
-|---|---|---|
-| `node: command not found` / `'node' is not recognized` | Terminal opened before Node was installed | Open a **new** terminal (or restart VS Code). Still failing → reinstall Node LTS, reboot. |
-| `Cannot use import statement outside a module` | No `"type": "module"` in package.json | Add it at the top level. Mind the comma. (Already there in this template.) |
-| `tokenize is not defined` | Forgot the `import` line in p6_wordfreq.js | `import { tokenize, countWords, topN } from "./utils.js";` |
-| `Cannot find module './utils'` | ESM needs `./` **and** `.js` | `import { ... } from "./utils.js";` |
-| `does not provide an export named 'countWords'` | Forgot `export` in utils.js | `export function countWords(...)` |
-| `Cannot find package 'inko'` | Wrong folder, or never ran `npm install` | Terminal must be in the repo root (where package.json is) → `npm install inko` |
-| Source Control lists thousands of `node_modules/` files | `.gitignore` is missing | This template has one. If you deleted it: put `node_modules/` back in `.gitignore`. If already committed: delete the `node_modules` folder, commit, then `npm install` again. |
-| `[ 10, 3, 8 ].sort()` gives `[ 10, 3, 8 ]` | Default sort is by string | `arr.sort((a, b) => a - b)` |
+| You see                                                 | Cause                                      | Fix                                                                                                                                                                           |
+| ------------------------------------------------------- | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `node: command not found` / `'node' is not recognized`  | Terminal opened before Node was installed  | Open a **new** terminal (or restart VS Code). Still failing → reinstall Node LTS, reboot.                                                                                     |
+| `Cannot use import statement outside a module`          | No `"type": "module"` in package.json      | Add it at the top level. Mind the comma. (Already there in this template.)                                                                                                    |
+| `tokenize is not defined`                               | Forgot the `import` line in p6_wordfreq.js | `import { tokenize, countWords, topN } from "./utils.js";`                                                                                                                    |
+| `Cannot find module './utils'`                          | ESM needs `./` **and** `.js`               | `import { ... } from "./utils.js";`                                                                                                                                           |
+| `does not provide an export named 'countWords'`         | Forgot `export` in utils.js                | `export function countWords(...)`                                                                                                                                             |
+| `Cannot find package 'inko'`                            | Wrong folder, or never ran `npm install`   | Terminal must be in the repo root (where package.json is) → `npm install inko`                                                                                                |
+| Source Control lists thousands of `node_modules/` files | `.gitignore` is missing                    | This template has one. If you deleted it: put `node_modules/` back in `.gitignore`. If already committed: delete the `node_modules` folder, commit, then `npm install` again. |
+| `[ 10, 3, 8 ].sort()` gives `[ 10, 3, 8 ]`              | Default sort is by string                  | `arr.sort((a, b) => a - b)`                                                                                                                                                   |
 
 Read the error message top to bottom. The file name and line number are in it.
-Ask AI to *explain* the message. Do not ask it to write the fix.
+Ask AI to _explain_ the message. Do not ask it to write the fix.
